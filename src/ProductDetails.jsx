@@ -6,10 +6,10 @@ import Button from './Button'
 import Input from './Input'
 import PopUp from './PopUp';
 
-function ProductDetails() {
+function ProductDetails({AddToCart}) {
   const { id } = useParams()
   
-  const [inputValue,setInputValue]=useState("1");
+  const [inputValue,setInputValue]=useState(1);
   const [product, setProduct] = useState([]);
  const [showPopup, setShowPopup] = useState(false);
 
@@ -26,14 +26,15 @@ function ProductDetails() {
   }, [])
 
   const onInputChange=(event)=>{
-    const quantity=event.target.value
+    const quantity=+(event.target.value)
     setInputValue(quantity)
     
     
   }
 
-  const AddToCart=()=>{
-    
+  const addToCart=()=>{
+    AddToCart(id,inputValue);
+    console.log("hlw")
     setShowPopup(true)
   }
 
@@ -52,7 +53,7 @@ function ProductDetails() {
             <h1 className="text-gray-400">{product.category}</h1>
             <span>{product.description}</span>
             <Input value={inputValue} min="1" type="number" onChange={onInputChange}></Input>
-            <Button onClick={AddToCart}>Add to cart</Button>
+            <Button onClick={addToCart}>Add to cart</Button>
           </div>
         </div>
 

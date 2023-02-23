@@ -1,12 +1,12 @@
 import React from 'react';
 function Button(props){
-  let themeClasses = 'bg-primary-default text-white border-indigo-700';
+  let themeClasses = 'bg-primary-default text-white';
   if(props.theme==='secondary'){
-    themeClasses='bg-red-300 border-red-700';
+    themeClasses='bg-white text-primary-default border-primary-default hover:bg-primary-default hover:text-white';
   }
   return(
     <div>
-    <button onClick={props.onClick} class={"disabled:bg-gray-300  px-5 py-1 rounded-md text-xl font-bold " + themeClasses}  disabled={props.disabled}>{props.children}</button>
+    <button onClick={props.onClick} class={"disabled:bg-gray-300  px-5 py-1 border rounded-md  font-bold " + themeClasses}  disabled={props.disabled}>{props.children}</button>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import ProductList from './ProductList'
 import NotFound from './NotFound'
 import { getProductList } from './api'
 import Loading from './Loading'
+import Button from './Button';
 
 
 
@@ -13,6 +14,7 @@ function ProductListPage() {
 
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState("default");
+ 
 
   useEffect(function() {
     const promise = getProductList()
@@ -61,6 +63,12 @@ function ProductListPage() {
           </select>
           {data.length > 0 &&<ProductList products={data} ></ProductList>}
         {data.length == 0 && <NotFound></NotFound>} 
+       <div className="flex space-x-2">
+         
+        <Button>1</Button>
+          <Button theme="secondary">2</Button>
+          <Button theme="secondary">-></Button>
+         </div>
         </div>
       );
 }
