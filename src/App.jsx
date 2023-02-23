@@ -38,6 +38,7 @@ function App() {
       <Route index element={<ProductListPage></ProductListPage>}/>
         <Route path="/products/:id" element={<ProductDetails AddToCart={onAddToCart}></ProductDetails>}></Route>
       </Routes>
+      
      
 
 </div>
