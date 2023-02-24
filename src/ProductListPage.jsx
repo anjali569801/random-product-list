@@ -54,13 +54,15 @@ function ProductListPage() {
 
   return (
     
-        <div className="p-2 px-16 items-center mx-auto max-w-6xl bg-white py:12.5 my-16 mx-7">
-          <input value={query} placeholder="search" className="p-2 border border-black m-3 rounded-md" onChange={onInputChange}></input>
-          <select value={sort} onChange={onSortChange} className="border border-black p-2">
+        <div className="p-2 md:px-16 items-center mx-auto max-w-6xl bg-white py:12.5 my-16 mx-7">
+          <div className="flex flex-col items-start justify-between space-y-2 bg-black md:space-y-0 px-5 py-2 md:flex-row">
+          <input value={query} placeholder="search" className="w-44 p-2 border border-black rounded-md " onChange={onInputChange}></input>
+          <select value={sort} onChange={onSortChange} className="border w-44 h-10  p-2 ">
             <option value="default">default sorting</option>
             <option value="ns">name sorting</option>
             <option value="ps">price sorting</option>
           </select>
+            </div>
           {data.length > 0 &&<ProductList products={data} ></ProductList>}
         {data.length == 0 && <NotFound></NotFound>} 
        <div className="flex space-x-2">

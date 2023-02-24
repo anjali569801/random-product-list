@@ -18,11 +18,6 @@ const alldata = [
       title: "balck printed shirt",
       catagory: "T-shirt",
     },
-    {
-      price: 85,
-      src: "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C81y9uY155qL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UX569_.png",
-      title: "printed shirt",
-      catagory: "T-shirt",
-    },
+    
   ]
 export default alldata;

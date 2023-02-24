@@ -3,6 +3,9 @@ const colors = require('tailwindcss/colors')
    content: ["src/**/*.jsx"],
   theme: {
     extend: {
+      borderWidth:{
+        1:"1px"
+      },
       padding:{
         12.5:"50px",
         20:"80px"

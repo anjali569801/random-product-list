@@ -7,6 +7,7 @@ import ProductDetails from './ProductDetails'
 
 
 
+
 function App() {
   const savedProduct = JSON.parse(localStorage.getItem('my-cart')) || {}
    const[cart,setCart]=useState(savedProduct);
@@ -32,6 +33,7 @@ function App() {
   return (
 
     <div className="bg-gray-300 flex flex-col h-screen overflow-scroll">
+  
       
       <Header totalProduct={count} ></Header>
       <Routes>
