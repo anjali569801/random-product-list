@@ -6,7 +6,9 @@ function Button(props){
   }
   return(
     <div>
-    <button onClick={props.onClick} class={"disabled:bg-gray-300  px-5 py-1 border rounded-md  font-bold " + themeClasses}  disabled={props.disabled}>{props.children}</button>
+    <button onClick={props.onClick} class={"disabled:bg-gray-300  px-5 py-1 border rounded-md  font-bold " + themeClasses}  disabled={props.disabled} >
+       {props.icon && <span className="mr-2 text-lg mb-1 inline-block">{props.icon}</span>}
+      {props.children}</button>
     </div>
   );
 }
