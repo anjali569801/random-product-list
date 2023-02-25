@@ -1,15 +1,15 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
-function Product({thumbnail,category,title,price,id}){
+function Product({ thumbnail, category, title, price, id }) {
 
-  return(
-    <div className="mt-20 bg-primary-light  md:mt-0">
+  return (
+    <div>
       <div className="max-w-xs">
         <div className="w-full aspect-square">
-        <img className="w-full object-cover h-full" src={thumbnail}></img>
-          </div>
+          <img className="w-full object-cover h-full" src={thumbnail}></img>
+        </div>
         <h1 className="text-gray-400">{category}</h1>
         <h1 className="font-semibold">{title}</h1>
         <h1 className=" font-semibold">${price}</h1>
