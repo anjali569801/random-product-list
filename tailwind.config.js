@@ -13,7 +13,8 @@ const colors = require('tailwindcss/colors')
       },
       margin:{
         15:"60px",
-        20:"80px"
+        20:"80px",
+        10:"40px"
       }
     },
     colors:{

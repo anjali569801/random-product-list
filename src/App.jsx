@@ -5,11 +5,9 @@ import {Routes,Route} from 'react-router-dom'
 import ProductDetails from './ProductDetails'
 
 
-
-
-
 function App() {
   const savedProduct = JSON.parse(localStorage.getItem('my-cart')) || {}
+  
    const[cart,setCart]=useState(savedProduct);
 
   const onAddToCart =(productId,count)=>{

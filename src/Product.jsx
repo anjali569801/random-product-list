@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 function Product({thumbnail,category,title,price,id}){
 
   return(
-    <div>
+    <div className="mt-20 bg-primary-light  md:mt-0">
       <div className="max-w-xs">
         <div className="w-full aspect-square">
         <img className="w-full object-cover h-full" src={thumbnail}></img>
