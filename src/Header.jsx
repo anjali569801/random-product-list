@@ -3,6 +3,7 @@ import { AiOutlineShopping } from 'react-icons/ai';
 import { RxCross2 } from 'react-icons/rx';
 import { BsList } from 'react-icons/bs';
 import OptionList from './OptionList';
+import {Link} from 'react-router-dom';
 
 function Header(props) {
 
@@ -21,8 +22,10 @@ function Header(props) {
         <img className="h-16" src="https://th.bing.com/th/id/OIP.YdkQGmhB9c2Sr84FeDD9egHaEK?pid=ImgDet&rs=1"></img>
         <div className="flex items-center">
           <div className="relative h-16">
+            <Link to="/cart">
             <AiOutlineShopping className="text-5xl relative text-primary-default" />
             <span class="absolute text-primary-default top-4 left-5 ">{props.totalProduct}</span>
+              </Link>
           </div>{!list &&
             <BsList onClick={onListIconClick} className="bg-primary-default text-4xl text-white mb-2 md:hidden"></BsList>}
           {list && <RxCross2 onClick={onCancelIconClick} className="bg-primary-default text-4xl text-white mb-2 md:hidden"></RxCross2>}
