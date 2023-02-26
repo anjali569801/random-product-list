@@ -76,7 +76,7 @@ function ProductDetails({ AddToCart }) {
                   min="1"
                   type="number"
                   onChange={onInputChange}
-                  className="w-9"
+                  className="w-"
                 />
                 <Button onClick={addToCart}>Add to cart</Button>
               </div>
