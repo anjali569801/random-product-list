@@ -41,12 +41,12 @@ function ProductDetails({ AddToCart }) {
   };
 
   const addToCart = () => {
-    AddToCart(id, inputValue,product);
+    AddToCart(id, inputValue, product);
     setShowPopup(true);
   };
 
-  
-  
+
+
   if (loading) {
     return <Loading />;
   }
@@ -70,14 +70,14 @@ function ProductDetails({ AddToCart }) {
               <h1 className="text-gray-400">{product.category}</h1>
               <span>{product.description}</span>
               <div className="flex space-x-2">
-                
-                  <Input
-                    value={inputValue}
-                    min="1"
-                    type="number"
-                    onChange={onInputChange}
-                    className="w-9"
-                  />
+
+                <Input
+                  value={inputValue}
+                  min="1"
+                  type="number"
+                  onChange={onInputChange}
+                  className="w-9"
+                />
                 <Button onClick={addToCart}>Add to cart</Button>
               </div>
               <div className="flex space-x-2">
