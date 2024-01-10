@@ -11,24 +11,24 @@ function App() {
   
    const[cart,setCart]=useState(savedProduct);
   const[cartProduct,setCartProduct]=useState([])
+  const[quantity,setQuantity]=useState('')
 
   const onAddToCart =(productId,count,product)=>{
     const oldCount = cart[productId] || 0;
    const newCart ={...cart, [productId]:oldCount+count};
     const data = JSON.stringify(newCart);
     localStorage.setItem('my-cart',data)
-    console.log("price",product.price)
+    console.log("price",cart)
+    setQuantity(count)
 
     //or
     // const newCart={...cart};
 
     // newCart[productId] = oldCount+ count;
     setCart(newCart);
+   setCartProduct([...cartProduct,product])
+    console.log("product",product)
     
-    //if (product.title !=)
-    setCartProduct([...cartProduct,product])
-    const name=Object.entries(cartProduct)
-    console.log("cart.title",name[1])
     console.log("cart",cartProduct)
     
   }
@@ -37,22 +37,15 @@ function App() {
   return previous + cart[current];
  },0);
 
-  const viewCart =()=>{
-    
-  }
-  
-
   return (
 
     <div className="bg-gray-300 flex flex-col h-screen overflow-scroll">
      
-  
-      
-      <Header totalProduct={count} product={cartProduct}></Header>
+      <Header totalProduct={count}></Header>
       <Routes>
       <Route index element={<ProductListPage></ProductListPage>}/>
-        <Route path="/products/:id" element={<ProductDetails onViewCart={viewCart} AddToCart={onAddToCart}></ProductDetails>}></Route>
-        <Route path="/cart" element={ <Cart products={cartProduct} ></Cart>}/>
+        <Route path="/products/:id" element={<ProductDetails  AddToCart={onAddToCart}></ProductDetails>}></Route>
+        <Route path="/cart" element={ <Cart cart={cartProduct} quantity={quantity} ></Cart>}/>
       </Routes>
   
 </div>

@@ -41,7 +41,7 @@ function ProductDetails({ AddToCart }) {
   };
 
   const addToCart = () => {
-    AddToCart(id, inputValue, product);
+    AddToCart(id, inputValue,product);
     setShowPopup(true);
   };
 
@@ -76,16 +76,16 @@ function ProductDetails({ AddToCart }) {
                   min="1"
                   type="number"
                   onChange={onInputChange}
-                  className="w-"
+                  className="w-10"
                 />
                 <Button onClick={addToCart}>Add to cart</Button>
               </div>
               <div className="flex space-x-2">
                 <Link to={'/products/' + (id - 1)}>
-                  <GrFormPreviousLink class="text-4xl bg-primary-default px-2 text-white" />
+                  <GrFormPreviousLink onClick={()=>setShowPopup(false)}  class="text-4xl bg-primary-default px-2 text-white" />
                 </Link>
                 <Link to={'/products/' + (id + 1)}>
-                  <GrFormNextLink class="text-4xl bg-primary-default px-2 text-white" />
+                  <GrFormNextLink onClick={()=>setShowPopup(false)} class="text-4xl bg-primary-default px-2 text-white" />
                 </Link>
               </div>
             </div>
