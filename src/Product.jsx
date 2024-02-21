@@ -13,7 +13,7 @@ function Product({ thumbnail, category, title, price, id }) {
         <h1 className="text-gray-400">{category}</h1>
         <h1 className="font-semibold">{title}</h1>
         <h1 className=" font-semibold">${price}</h1>
-        <Link to={"/products/" + (id)}>view details</Link>
+        <Link to={"/products/" + (id)} className="text-primary-dark underline">view details</Link>
       </div>
     </div>
   );

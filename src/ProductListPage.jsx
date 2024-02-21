@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { GrFormNextLink } from 'react-icons/gr';
 import ProductList from './ProductList'
 import NotFound from './NotFound'
 import { getProductList } from './api'
 import Loading from './Loading'
 import Button from './Button';
+import {Link} from 'react-router-dom';
 
 
 function ProductListPage() {
 
   const [productList, setProductList] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState("default");
 
@@ -24,11 +25,12 @@ function ProductListPage() {
     })
   }, [])
 
-
+  
   let data = productList.filter(function(items) {
     return items.title.toLowerCase().indexOf(query.toLowerCase()) != -1;
   });
 
+  
 
   const onInputChange = (event) => {
     const newQuery = event.target.value;
@@ -69,8 +71,10 @@ function ProductListPage() {
       <div className="flex space-x-2">
 
         <Button>1</Button>
-        <Button theme="secondary">2</Button>
-        <Button theme="secondary">-></Button>
+        <Button theme="secondary" >2</Button>
+        <Link>
+        <GrFormNextLink class="bg-white border text-bold w-16 h-8  px-5 py-1 border rounded-md  font-bold  border-primary-default hover:bg-primary-default" /></Link>
+        
       </div>
     </div>
   );

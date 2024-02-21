@@ -1,6 +1,7 @@
 import React from 'react';
 
 function CartProduct({thumbnail,price,title,quantity}) {
+  console.log("quantity cart product",quantity);
   return (
     <div className="flex flex-col border items-center bg-white">
       <img className=" w-32 h-32 my-2" src={thumbnail}></img>

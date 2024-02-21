@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button';
-import {AiFillCheckCircle} from 'react-icons/ai'
+import {AiFillCheckCircle} from 'react-icons/ai';
+import {Link} from 'react-router-dom';
 
 function PopUp(props){
   
@@ -9,8 +10,10 @@ function PopUp(props){
       <div className="flex">
       <AiFillCheckCircle className="text-primary-default text-xl mr-2"></AiFillCheckCircle>
       <span>" {props.product} " has been added to your cart</span>
-        </div>
-    <Button>View cart</Button></div>
+        </div><Link to={"/cart"}>
+        <Button>View cart</Button>
+        </Link>
+      </div>
     
   );
 }

@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import Header from './Header';
 import ProductListPage from './ProductListPage'
-import {Routes,Route} from 'react-router-dom'
+import {Routes,Route,useParams} from 'react-router-dom'
 import ProductDetails from './ProductDetails';
 import Cart from './Cart'
 
@@ -20,18 +20,12 @@ function App() {
     localStorage.setItem('my-cart',data)
     console.log("price",cart)
     setQuantity(count)
-
-    //or
-    // const newCart={...cart};
-
-    // newCart[productId] = oldCount+ count;
     setCart(newCart);
-   setCartProduct([...cartProduct,product])
-    console.log("product",product)
-    
-    console.log("cart",cartProduct)
+   setCartProduct([...cartProduct,{ ...product, quantity:count, id:productId }])
+    console.log("quantity add to cart",quantity);
     
   }
+  
   
  const count= Object.keys(cart).reduce(function(previous,current){
   return previous + cart[current];
@@ -45,7 +39,7 @@ function App() {
       <Routes>
       <Route index element={<ProductListPage></ProductListPage>}/>
         <Route path="/products/:id" element={<ProductDetails  AddToCart={onAddToCart}></ProductDetails>}></Route>
-        <Route path="/cart" element={ <Cart cart={cartProduct} quantity={quantity} ></Cart>}/>
+        <Route path="/cart" element={ <Cart cart={cartProduct} ></Cart>}/>
       </Routes>
   
 </div>
