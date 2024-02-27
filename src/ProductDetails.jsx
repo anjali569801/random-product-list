@@ -17,16 +17,14 @@ function ProductDetails({ AddToCart }) {
   const [showPopup, setShowPopup] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // or
-  // const {id}=useParams()
   useEffect(
     function() {
       const promise = getProduct(id);
       promise.then(function(response) {
         setProduct(response.data);
         setLoading(false);
-        console.log('data aa gya', response.data);
-        console.log(id);
+        //console.log('data aa gya', response.data);
+        //console.log(id);
       });
       promise.catch(function(error) {
         console.log('erroe', error);

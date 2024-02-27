@@ -7,22 +7,29 @@ import Cart from './Cart'
 
 
 function App() {
-  const savedProduct = JSON.parse(localStorage.getItem('my-cart')) || {}
+ // const savedProduct = JSON.parse(localStorage.getItem('my-cart')) || {}
   
-   const[cart,setCart]=useState(savedProduct);
+  
+   //const[cart,setCart]=useState(savedProduct);
+   const[cart,setCart]=useState(0);
+   
   const[cartProduct,setCartProduct]=useState([])
   const[quantity,setQuantity]=useState('')
 
   const onAddToCart =(productId,count,product)=>{
     const oldCount = cart[productId] || 0;
-   const newCart ={...cart, [productId]:oldCount+count};
+    const newCart ={...cart, [productId]:oldCount+count};
+   const newCartProduct =cartProduct.filter((product)=>product.id!==productId);
+ 
     const data = JSON.stringify(newCart);
     localStorage.setItem('my-cart',data)
-    console.log("price",cart)
+   
+    
     setQuantity(count)
     setCart(newCart);
-   setCartProduct([...cartProduct,{ ...product, quantity:count, id:productId }])
-    console.log("quantity add to cart",quantity);
+   
+   setCartProduct([...newCartProduct,{ ...product, quantity:oldCount+count}])
+    
     
   }
   
